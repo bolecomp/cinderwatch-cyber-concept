@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Estimate the directional cost of cyber downtime."><meta name="robots" content="noindex, nofollow">
+  <title>Downtime Exposure Calculator — Cinderwatch Cyber</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='13' fill='%2311100e'/%3E%3Cpath d='M32 8 51 18v14c0 12-7 20-19 25C20 52 13 44 13 32V18L32 8Z' fill='%23ff5538'/%3E%3Cpath d='m24 32 6 6 12-14' fill='none' stroke='%2311100e' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="concept-bar">Interactive prototype — estimates are directional and remain in your browser</div>
+  <header class="site-header"><div class="container nav">
+    <a class="brand" href="../index.html" aria-label="Cinderwatch Cyber home"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 2 36 10v12c0 9.5-5.8 15.6-16 19C9.8 37.6 4 31.5 4 22V10L20 2Z" fill="#ff5538"/><path d="m13 20 5 5 10-11" fill="none" stroke="#11100e" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Cinderwatch <span>Cyber</span></span></a>
+    <button class="nav-toggle" type="button" aria-label="Toggle navigation" aria-expanded="false" data-nav-toggle>☰</button>
+    <nav class="nav-links" aria-label="Primary navigation" data-nav-links><a href="../index.html#services">Capabilities</a><a href="../index.html#approach">Approach</a><a href="../scenario/index.html">Scenario</a><a class="btn btn-primary" href="index.html">Calculator</a></nav>
+  </div></header>
+
+  <main id="main">
+    <section class="page-hero"><div class="container">
+      <div class="breadcrumbs"><a href="../index.html">Home</a> / Downtime exposure</div>
+      <p class="eyebrow">Six inputs · immediate direction · no email gate</p>
+      <h1>What could one cyber outage cost?</h1>
+      <p>Translate operational downtime into a business estimate, compare it with your recovery expectations and see which resilience tier deserves attention first.</p>
+    </div></section>
+
+    <section class="calculator-section"><div class="container"><div class="calculator-shell">
+      <form class="calculator-form" data-calculator>
+        <h2>Your operating profile</h2><p class="form-help">Adjust the assumptions below. The result updates instantly.</p>
+        <div class="field-grid">
+          <div class="field"><label for="employees">Employees affected</label><input id="employees" type="number" min="1" max="5000" value="85"></div>
+          <div class="field"><label for="revenue">Revenue per operating hour ($)</label><input id="revenue" type="number" min="0" step="250" value="6500"></div>
+          <div class="field full"><label for="hours">Expected outage duration</label><input id="hours" type="range" min="1" max="72" value="12"><div class="range-output"><span>1 hour</span><strong data-hours-output>12 hours</strong><span>72 hours</span></div></div>
+          <div class="field"><label for="rto">Required recovery time (RTO)</label><select id="rto"><option value="1">Under 1 hour</option><option value="4" selected>1–4 hours</option><option value="12">4–12 hours</option><option value="24">12–24 hours</option><option value="48">More than 24 hours</option></select></div>
+          <div class="field"><label for="rpo">Acceptable data loss (RPO)</label><select id="rpo"><option value="1">Under 1 hour</option><option value="4" selected>1–4 hours</option><option value="12">4–12 hours</option><option value="24">12–24 hours</option></select></div>
+          <div class="field full"><label for="criticality">Operational dependency</label><select id="criticality"><option value="0.55">Some teams can continue manually</option><option value="0.8">Most teams are significantly disrupted</option><option value="1" selected>Core operations stop</option><option value="1.25">Customer safety or compliance is affected</option></select></div>
+        </div>
+        <p class="privacy-note">Concept demo: values stay in your browser and are not transmitted or stored. This is a directional planning estimate, not financial or security advice.</p>
+      </form>
+      <aside class="result-panel" aria-live="polite">
+        <span class="result-kicker">Estimated incident exposure</span><div class="exposure-total" data-total>$0</div><span class="exposure-label">for the selected outage scenario</span>
+        <div class="result-breakdown"><div class="result-line"><span>Interrupted revenue</span><strong data-revenue-loss>$0</strong></div><div class="result-line"><span>Idle workforce estimate</span><strong data-labor-loss>$0</strong></div><div class="result-line"><span>Response & recovery allowance</span><strong data-response-cost>$0</strong></div></div>
+        <div class="recommendation"><small>Suggested resilience tier</small><h3 data-tier>—</h3><p data-tier-copy>—</p></div>
+      </aside>
+    </div></div></section>
+    <section class="section-signal cta-band"><div class="container cta-grid"><h2>Cost is only half the decision.</h2><div class="cta-side"><p>See how preparation changes the first hours of a fictional ransomware incident.</p><a class="btn btn-dark" href="../scenario/index.html">View the scenario ↗</a></div></div></section>
+  </main>
+
+  <footer class="footer"><div class="container"><div class="footer-grid"><div><a class="brand" href="../index.html"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 2 36 10v12c0 9.5-5.8 15.6-16 19C9.8 37.6 4 31.5 4 22V10L20 2Z" fill="#ff5538"/><path d="m13 20 5 5 10-11" fill="none" stroke="#11100e" stroke-width="4"/></svg><span>Cinderwatch <span>Cyber</span></span></a><p class="footer-copy">A fictional cyber resilience company created to explore a clearer cybersecurity buying journey.</p></div><div><h3>Explore</h3><div class="footer-links"><a href="../index.html#services">Capabilities</a><a href="index.html">Exposure calculator</a><a href="../scenario/index.html">Scenario</a></div></div><div><h3>Project</h3><div class="footer-links"><a href="../legacy/index.html">Fictional before site</a><a href="../scenario/index.html#disclosure">Disclosure</a></div></div></div><div class="footer-bottom"><span>© <span data-year></span> Cinderwatch Cyber concept</span><span>Independent concept · no client affiliation · no data collection</span></div></div></footer>
+  <script src="../assets/site.js"></script><script src="../assets/calculator.js"></script>
+</body>
+</html>
